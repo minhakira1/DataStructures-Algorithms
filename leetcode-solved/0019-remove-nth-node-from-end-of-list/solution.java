@@ -25,21 +25,14 @@ class Solution {
         // from start (slow at start, fast at kth) step by step slow and fast
         // to the end
         while (fast != null) {
+            preSlow = slow;
             fast = fast.next;
             slow = slow.next;
-            if (preSlow == null) {
-                preSlow = head;
-            } else {
-                preSlow = preSlow.next;
-            }
         }
         if (preSlow != null) {
             preSlow.next = slow.next;
-            slow.next = null;
         } else {
             head = head.next;
-            slow.next = null;
-            slow = null;
         }
         return head;
     }
