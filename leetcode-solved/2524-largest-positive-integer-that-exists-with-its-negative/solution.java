@@ -1,12 +1,12 @@
 class Solution {
     public int findMaxK(int[] nums) {
-      Set<Integer> setNegativeNums = new HashSet<>();
+      Set<Integer> setNums = new HashSet<>();
       int max = -1;
       for (int num : nums) {
-        if (setNegativeNums.contains(-num)) {
+        if (setNums.contains(-num)) {
           max = Math.max(max, Math.abs(num));
         }
-        setNegativeNums.add(num);
+        setNums.add(num);
       }
       return max;
     }
