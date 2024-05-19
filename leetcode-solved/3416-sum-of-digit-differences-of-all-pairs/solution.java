@@ -14,13 +14,13 @@ class Solution {
     long totalDifferences = 0;
     for (int i = 0; i < numDigits; i++) {
       for (int d1 = 0; d1 <= 9; d1++) {
-        for (int d2 = 0; d2 <= 9; d2++) {
+        for (int d2 = d1+1; d2 <= 9; d2++) {
           if (d1 != d2) {
-            totalDifferences += (long) digitCounts[i][d1] * digitCounts[i][d2];
+            totalDifferences += (long)digitCounts[i][d1] * digitCounts[i][d2];
           }
         }
       }
     }
-    return totalDifferences / 2;
+    return totalDifferences;
   }
 }
